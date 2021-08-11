@@ -33,14 +33,13 @@ var taskFormHandler = function(event) {
     // Give it a class name
     taskInfoEl.className = "task-info";
     // Add HTML content to div
-    taskInfoEl.innerHTML = "<h3 class='task-name'>" + taskNameInput + "</h3><span class='task-type'>" + taskTypeInput + "</span>";
-
+    taskInfoEl.innerHTML = "<h3 class='task-name'>" + taskDataObj.name + "</h3><span class='task-type'>" + taskDataObj.type + "</span>";
     listItemEl.appendChild(taskInfoEl);
 
     // Add entire list item to list
     tasksToDoEl.appendChild(listItemEl);
 
-  }
+  };
 
 // Event Listener
 formEl.addEventListener("submit", taskFormHandler);
