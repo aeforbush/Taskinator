@@ -2,6 +2,7 @@
 var formEl = document.querySelector("#task-form");
 var tasksToDoEl = document.querySelector("#tasks-to-do");
 var taskIdCounter = 0;
+var pageContentEl = document.querySelector("#page-content");
 
 // Creating a task item function
 var taskFormHandler = function(event) {
@@ -104,8 +105,30 @@ var taskFormHandler = function(event) {
     // Return statement
     return actionContainerEl;
   };
-// Event Listener
-formEl.addEventListener("submit", taskFormHandler);
+
+    var taskButtonHandler = function(event) {
+    console.log(event.target);
+
+    if (event.target.matches(".delete-btn")) {
+    // get the element's task id
+    var taskId = event.target.getAttribute("data-task-id");
+    //console.log(taskId);
+    }
+    if (event.target.matches(".delete-btn")) {
+      var taskId = event.target.getAttribute("data-task-id");
+      deleteTask(taskId);
+    }
+  };
+
+    var deleteTask = function(taskId) {
+      var taskSelected = document.querySelector(".task-item[data-task-id='" + taskId + "']");
+      taskSelected.remove();
+  };
+
+
+    // Event Listener
+    formEl.addEventListener("submit", taskFormHandler);
+    pageContentEl.addEventListener("click", taskButtonHandler);
 
 // Ability to read and store users input
 
