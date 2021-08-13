@@ -54,8 +54,8 @@ var taskFormHandler = function(event) {
   // Function to accept the form values as arguments and use them to create the new task item's HTML
   var createTaskEl = function(taskDataObj) {
     // Create list item
-    console.log(taskDataObj);
-    console.log(taskDataObj.status);
+    //console.log(taskDataObj);
+    //console.log(taskDataObj.status);
 
     var listItemEl = document.createElement("li");
     listItemEl.className = "task-item";
@@ -251,6 +251,15 @@ var taskFormHandler = function(event) {
     var saveTasks = function() {
       localStorage.setItem("task", JSON.stringify(tasks));
 
+    }
+
+    var loadTasks = function() {
+      // gets task items from localStorage
+      localStorage.getItem(tasks);
+      // converts tasks from the string format back into an array of objects
+      Object.assign([],string);
+      // iterates through a tasks array and creates task elements on the page from it
+      
     }
     // Event Listeners
     // create a new task
