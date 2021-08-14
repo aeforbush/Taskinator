@@ -8,7 +8,7 @@ var tasksInProgressEl = document.querySelector("#tasks-in-progress");
 var tasksCompletedEl = document.querySelector("#tasks-completed");
 
 // array variable
-var tasks =[];
+var tasks =[]; 
 
 // Creating a task item function
 var taskFormHandler = function(event) {
@@ -80,8 +80,10 @@ var taskFormHandler = function(event) {
 
     //???
     taskDataObj.id = taskIdCounter;
+    console.log(taskDataObj)
     tasks.push(taskDataObj);
     saveTasks();
+    
 
     // Increase task counter for next unqiue id
     taskIdCounter++;
@@ -257,9 +259,13 @@ var taskFormHandler = function(event) {
       // gets task items from localStorage
       localStorage.getItem(tasks);
       // converts tasks from the string format back into an array of objects
-      Object.assign([],string);
-      // iterates through a tasks array and creates task elements on the page from it
       
+      // iterates through a tasks array and creates task elements on the page from it
+      for (var i = 0; i < tasks.length; i++) {
+
+      }  
+
+
     }
     // Event Listeners
     // create a new task
